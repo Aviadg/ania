@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriEnglish - Opanuj Język Angielski w Dietetyce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-green': '#16a085',
+                        'custom-dark': '#27ae60',
+                        'custom-light': '#2ecc71',
+                        'custom-gold': '#f1c40f',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                    },
+                    backgroundSize: {
+                        '400%': '400%',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-white">
+                    <span class="text-custom-gold">🥗</span> NutriEnglish
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-custom-gold transition-colors">Start</a>
+                    <a href="#offer" class="text-white hover:text-custom-gold transition-colors">Oferta</a>
+                    <a href="#course" class="text-white hover:text-custom-gold transition-colors">Kurs</a>
+                    <a href="#testimonials" class="text-white hover:text-custom-gold transition-colors">Opinie</a>
+                    <a href="#about" class="text-white hover:text-custom-gold transition-colors">O mnie</a>
+                    <a href="index.html" class="text-custom-gold hover:text-white transition-colors">English</a>
+                </div>
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center relative overflow-hidden custom-shape">
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/20 rounded-full animate-float"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-custom-gold/30 rounded-full animate-float" style="animation-delay: -2s"></div>
+        <div class="absolute bottom-20 left-20 w-16 h-16 bg-white/20 rounded-full animate-float" style="animation-delay: -4s"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="mb-8 animate-bounce-slow">
+                    <span class="text-8xl">🌟</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 text-shadow animate-pulse-slow">
+                    Opanuj <span class="text-custom-gold">Angielski</span><br>
+                    w Dietetyce
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-shadow opacity-90">
+                    Specjalistyczny Kurs Języka Angielskiego dla Dietetyków<br>
+                    <span class="text-custom-gold font-semibold">Rozwiń Karierę • Zdobądź Klientów z Zagranicy • Otwórz Nowe Możliwości</span>
+                </p>
+                
+                <!-- Contact Options -->
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                    <a href="mailto:contact@nutrienglish.com" class="glass px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transform transition-all duration-300 flex items-center gap-3">
+                        <i class="fas fa-envelope text-custom-gold"></i>
+                        Napisz do Mnie
+                    </a>
+                    <a href="https://wa.me/48123456789" class="bg-green-500 px-8 py-4 rounded-full text-white font-semibold hover:scale-105 transform transition-all duration-300 flex items-center gap-3 shadow-lg">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Level Test Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                    <i class="fas fa-brain text-custom-green mr-4"></i>
+                    Sprawdź Swój Poziom Angielskiego w Dietetyce
+                </h2>
+                
+                <div class="bg-white rounded-3xl shadow-2xl p-8">
+                    <div id="quiz-container">
+                        <div class="text-center mb-8">
+                            <p class="text-lg text-gray-600">Odpowiedz na pytania, aby poznać swój obecny poziom</p>
+                            <div class="mt-4">
+                                <span class="text-2xl font-bold text-custom-green" id="question-counter">1</span>
+                                <span class="text-gray-500"> / 5</span>
+                            </div>
+                        </div>
+                        
+                        <div id="question-container">
+                            <!-- Questions will be loaded here -->
+                        </div>
+                        
+                        <div class="mt-8 flex justify-center">
+                            <button id="next-btn" class="bg-custom-green text-white px-8 py-3 rounded-full font-semibold hover:bg-custom-dark transition-colors" onclick="nextQuestion()">
+                                Następne Pytanie
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="result-container" class="hidden text-center">
+                        <div class="text-6xl mb-4" id="result-emoji"></div>
+                        <h3 class="text-3xl font-bold mb-4" id="result-title"></h3>
+                        <p class="text-lg text-gray-600 mb-6" id="result-description"></p>
+                        <button onclick="restartQuiz()" class="bg-custom-green text-white px-6 py-3 rounded-full mr-4">Spróbuj Ponownie</button>
+                        <a href="#offer" class="bg-custom-gold text-white px-6 py-3 rounded-full">Zobacz Ofertę</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="offer" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
+                <span class="text-custom-green">💎</span> Pakiety Indywidualne
+            </h2>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Standard Package -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="text-center mb-8">
+                        <div class="bg-custom-green/10 rounded-full p-6 inline-block">
+                            <span class="text-5xl">✨</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4 mb-2">Pakiet Standard</h3>
+                        <p class="text-gray-600">Dla początkujących w branży dietetycznej</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-custom-green"></i>
+                            <span>4 indywidualne sesje miesięcznie (60 min)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-custom-green"></i>
+                            <span>Spersonalizowane nagrania po każdej lekcji</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-custom-green"></i>
+                            <span>Dostęp do aplikacji z fiszkami</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-custom-green"></i>
+                            <span>Materiały do nauki między lekcjami</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-custom-green mb-2">997 zł/mies.</div>
+                        <p class="text-sm text-gray-500 mb-6">Minimum 3 miesiące</p>
+                        <a href="mailto:contact@nutrienglish.com?subject=Pakiet Standard" class="block bg-custom-green text-white px-6 py-3 rounded-full font-semibold hover:bg-custom-dark transition-colors">
+                            Rozpocznij Naukę
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- VIP Package -->
+                <div class="bg-gradient-to-r from-custom-green to-custom-dark rounded-3xl p-1">
+                    <div class="bg-white rounded-3xl p-8">
+                        <div class="text-center mb-8">
+                            <div class="bg-custom-gold/20 rounded-full p-6 inline-block">
+                                <span class="text-5xl">👑</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mt-4 mb-2">Pakiet VIP</h3>
+                            <p class="text-gray-600">Dla ambitnych profesjonalistów</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>8 indywidualnych sesji miesięcznie (60 min)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>Spersonalizowane nagrania po każdej lekcji</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>Premium dostęp do aplikacji z fiszkami</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>Rozszerzone materiały do nauki</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>Wsparcie przez WhatsApp między lekcjami</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-star text-custom-gold"></i>
+                                <span>Przegląd dokumentów w języku angielskim</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-custom-green mb-2">1797 zł/mies.</div>
+                            <p class="text-sm text-gray-500 mb-6">Minimum 3 miesiące</p>
+                            <a href="mailto:contact@nutrienglish.com?subject=Pakiet VIP" class="block bg-custom-gold text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-colors">
+                                Wybierz Pakiet VIP
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-xl text-gray-600 mb-8">Potrzebujesz spersonalizowanego rozwiązania?</p>
+                <a href="https://wa.me/48123456789?text=Cześć, chciałabym/chciałbym omówić indywidualny plan nauki" class="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 transition-colors">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    Umów Bezpłatną Konsultację
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modules -->
+    <section id="course" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
+                <span class="text-custom-green">📚</span> Moduły Kursu
+            </h2>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">🥗</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 1: Słownictwo Podstawowe</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Makroskładniki i Mikroskładniki</li>
+                        <li>• Grupy Żywności i Kategorie</li>
+                        <li>• Metody Gotowania</li>
+                        <li>• Ograniczenia Dietetyczne</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">👥</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 2: Komunikacja z Klientem</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Pierwsza Konsultacja</li>
+                        <li>• Ocena Stanu Zdrowia</li>
+                        <li>• Ustalanie Celów</li>
+                        <li>• Wizyty Kontrolne</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">🎯</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 3: Motywowanie Klientów</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Wywiad Motywacyjny</li>
+                        <li>• Techniki Zmiany Zachowań</li>
+                        <li>• Pokonywanie Oporu</li>
+                        <li>• Budowanie Pewności Siebie</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">💊</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 4: Suplementy i Witaminy</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Kategorie Suplementów</li>
+                        <li>• Dawkowanie i Czas Przyjmowania</li>
+                        <li>• Interakcje i Przeciwwskazania</li>
+                        <li>• Zalecenia Oparte na Dowodach</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">🔬</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 5: Dietetyka Kliniczna</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Terminologia Medyczna</li>
+                        <li>• Interpretacja Wyników Badań</li>
+                        <li>• Diety Lecznicze</li>
+                        <li>• Zarządzanie Chorobami</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-4 text-center">📝</div>
+                    <h3 class="text-xl font-bold mb-3 text-custom-green">Moduł 6: Angielski Zawodowy</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Pisanie Emaili i Biznesowe</li>
+                        <li>• Prezentacje Konferencyjne</li>
+                        <li>• Analiza Publikacji Naukowych</li>
+                        <li>• Networking Zawodowy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
+                <span class="text-custom-green">💬</span> Opinie Kursantów
+            </h2>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-custom-green/10 flex items-center justify-center">
+                                <span class="text-4xl">👩‍⚕️</span>
+                            </div>
+                        </div>
+                        <div class="text-custom-gold text-center mb-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="text-gray-600 text-center mb-6">
+                            "Dzięki kursowi mogę teraz prowadzić konsultacje z klientami z całego świata. Mój biznes nabrał zupełnie nowego wymiaru!"
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-bold">Magdalena K.</h4>
+                            <p class="text-sm text-gray-500">Dietetyk Kliniczny</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-custom-green/10 flex items-center justify-center">
+                                <span class="text-4xl">👨‍⚕️</span>
+                            </div>
+                        </div>
+                        <div class="text-custom-gold text-center mb-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="text-gray-600 text-center mb-6">
+                            "Materiały są świetnie przygotowane, a wsparcie mentora bezcenne. Teraz czytam anglojęzyczne publikacje naukowe bez problemu!"
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-bold">Piotr W.</h4>
+                            <p class="text-sm text-gray-500">Dietetyk Sportowy</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-custom-green/10 flex items-center justify-center">
+                                <span class="text-4xl">👩‍🔬</span>
+                            </div>
+                        </div>
+                        <div class="text-custom-gold text-center mb-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="text-gray-600 text-center mb-6">
+                            "Kurs przekroczył moje oczekiwania. Indywidualne sesje live pomogły mi przełamać barierę językową!"
+                        </p>
+                        <div class="text-center">
+                            <h4 class="font-bold">Anna B.</h4>
+                            <p class="text-sm text-gray-500">Dietetyk, Właścicielka Poradni</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
+                <span class="text-custom-green">❓</span> Często Zadawane Pytania
+            </h2>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">Jaki poziom angielskiego jest wymagany?</h3>
+                    <p class="text-gray-600">
+                        Kurs jest dostępny dla osób na poziomie A2-B2. Jeśli nie jesteś pewien swojego poziomu, możesz skorzystać z naszego darmowego testu online.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">Jak długo mam dostęp do materiałów?</h3>
+                    <p class="text-gray-600">
+                        Otrzymujesz dożywotni dostęp do wszystkich materiałów kursowych, włączając przyszłe aktualizacje. Wsparcie mentora trwa 6 miesięcy od rozpoczęcia kursu.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">Czy mogę odbyć kurs w swoim tempie?</h3>
+                    <p class="text-gray-600">
+                        Tak, wszystkie materiały są dostępne od razu po rozpoczęciu kursu. Możesz uczyć się w swoim tempie, jednak rekomendujemy ukończenie kursu w ciągu 12 tygodni.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4">Co jeśli nie będę zadowolony/a z kursu?</h3>
+                    <p class="text-gray-600">
+                        Oferujemy 30-dniową gwarancję zwrotu pieniędzy. Jeśli w tym czasie uznasz, że kurs nie spełnia Twoich oczekiwań, zwrócimy Ci pełną kwotę bez zbędnych pytań.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="mb-8">
+                            <span class="text-6xl">👋</span>
+                        </div>
+                        <h2 class="text-4xl font-bold mb-6 text-gray-800">Cześć, jestem Anna!</h2>
+                        <div class="space-y-4 text-gray-600">
+                            <p>
+                                Łączę 15 lat doświadczenia w nauczaniu języka angielskiego z moją pasją do dietetyki i zdrowia holistycznego. Przez 15 lat prowadziłam własną szkołę językową w Londynie, gdzie również ukończyłam studia dietetyczne w College of Naturopathic Medicine (CNM).
+                            </p>
+                            <p>
+                                Moja międzynarodowa perspektywa, znajomość wielu języków (hiszpański, niemiecki, rosyjski, grecki) oraz doświadczenie w pracy z klientami z różnych kultur pozwalają mi doskonale rozumieć wyzwania związane z nauką języka specjalistycznego.
+                            </p>
+                            <p>
+                                Obecnie prowadzę zajęcia online z różnych zakątków świata, co dodaje moim lekcjom unikalnej perspektywy i elastyczności. Moja metoda nauczania łączy indywidualne podejście z nowoczesnymi narzędziami, takimi jak spersonalizowane nagrania i dedykowana aplikacja do nauki słownictwa.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-graduation-cap text-custom-green text-xl"></i>
+                                <span>Magister Filologii Angielskiej</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-certificate text-custom-green text-xl"></i>
+                                <span>Dyplom Dietetyki, College of Naturopathic Medicine London</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-award text-custom-green text-xl"></i>
+                                <span>15+ lat doświadczenia w nauczaniu języka angielskiego</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="blob-lg w-full h-full absolute"></div>
+                        <img src="about.jpg" alt="Anna Luksza - założycielka NutriEnglish" class="relative z-10 rounded-3xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div>
+                        <div class="text-2xl font-bold mb-6">
+                            <span class="text-custom-gold">🥗</span> NutriEnglish
+                        </div>
+                        <p class="text-gray-400">
+                            Specjalistyczny kurs języka angielskiego dla dietetyków, który otwiera drzwi do międzynarodowej kariery.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-6">Szybkie Linki</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Start</a></li>
+                            <li><a href="#offer" class="text-gray-400 hover:text-white transition-colors">Oferta</a></li>
+                            <li><a href="#course" class="text-gray-400 hover:text-white transition-colors">Kurs</a></li>
+                            <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Opinie</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">O mnie</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-6">Kontakt</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="mailto:contact@nutrienglish.com" class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    contact@nutrienglish.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/48123456789" class="text-gray-400 hover:text-white transition-colors">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <div class="text-gray-400">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Warszawa, Polska
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                    <p>&copy; 2025 NutriEnglish. Wszelkie prawa zastrzeżone.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
