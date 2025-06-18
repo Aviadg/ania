@@ -18,7 +18,6 @@
 }
 
 .custom-shape {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .blob {
@@ -39,3 +38,92 @@
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
+/* Hero section with blueberry background */
+.hero-with-blueberries {
+    background-image: url('ania_7.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Enhanced glass effect for better contrast on dark background */
+.glass-enhanced {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.glass-enhanced:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* Enhanced text shadows for better readability on dark background */
+.text-shadow-strong {
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8), 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Hero text animations */
+.hero-title {
+    animation: floatUpFadeIn 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-subtitle {
+    animation: floatUpFadeIn 1.5s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-buttons {
+    animation: floatUpFadeIn 1.8s ease-out 0.6s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Keyframes for floating up and fading in */
+@keyframes floatUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-10px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Enhanced floating animation for the title - now without continuous float */
+.hero-title-enhanced {
+    animation: floatUpFadeIn 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Remove the continuous floating animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Staggered animation for individual words */
+.word-1 { animation-delay: 0s; }
+.word-2 { animation-delay: 0.2s; }
+.word-3 { animation-delay: 0.4s; }
