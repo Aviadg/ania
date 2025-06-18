@@ -159,10 +159,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Initialize quiz
-document.addEventListener('DOMContentLoaded', () => {
-    loadQuestion();
-});
 
 // Intersection Observer for animations
 const observerOptions = {
