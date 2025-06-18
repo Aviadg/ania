@@ -100,50 +100,86 @@
         </div>
     </section>
 
-    <!-- Level Test Section -->
-    <section class="py-20 bg-gray-100">
+    <!-- About Section - New Position -->
+    <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
-                    <i class="fas fa-brain text-custom-green mr-4"></i>
-                    Sprawdź Swój Poziom Angielskiego w Dietetyce
-                </h2>
-                
-                <div class="bg-white rounded-3xl shadow-2xl p-8">
-                    <div id="quiz-container">
-                        <div class="text-center mb-8">
-                            <p class="text-lg text-gray-600">Odpowiedz na pytania, aby poznać swój obecny poziom</p>
-                            <div class="mt-4">
-                                <span class="text-2xl font-bold text-custom-green" id="question-counter">1</span>
-                                <span class="text-gray-500"> / 5</span>
-                            </div>
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-bold mb-8 text-gray-800">
+                        <span class="text-6xl">🧑‍🏫</span> O mnie
+                    </h2>
+                    <p class="text-2xl text-gray-600 mb-12">
+                        Cześć! Nazywam się Ania i pomagam dietetykom, którzy chcą działać globalnie – ale bez stresu związanego z językiem.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Left Column -->
+                    <div class="space-y-8">
+                        <!-- Kim jestem -->
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-custom-green flex items-center gap-3">
+                                <span class="text-3xl">👩‍🏫</span> Kim jestem?
+                            </h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li>• Jestem nauczycielką języka angielskiego z 15-letnim doświadczeniem</li>
+                                <li>• Przez 15 lat mieszkałam w Londynie, gdzie prowadziłam własną szkołę językową</li>
+                                <li>• Uczyłam setki Polaków – doskonale rozumiem, z czym zmagają się osoby, które chcą mówić po angielsku, ale brakuje im pewności</li>
+                            </ul>
                         </div>
-                        
-                        <div id="question-container">
-                            <!-- Questions will be loaded here -->
-                        </div>
-                        
-                        <div class="mt-8 flex justify-center">
-                            <button id="next-btn" class="bg-custom-green text-white px-8 py-3 rounded-full font-semibold hover:bg-custom-dark transition-colors" onclick="nextQuestion()">
-                                Następne Pytanie
-                            </button>
+
+                        <!-- Co jeszcze -->
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-custom-green flex items-center gap-3">
+                                <span class="text-3xl">🥑</span> Co jeszcze?
+                            </h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li>• Ukończyłam studia z dietetyki i odżywiania w College of Naturopathic Medicine w Londynie</li>
+                                <li>• Od lat interesuję się zdrowiem, stylem życia i podejściem holistycznym</li>
+                                <li>• Dlatego wiem, jakich słów i tematów naprawdę potrzebujesz w pracy z klientami</li>
+                            </ul>
                         </div>
                     </div>
-                    
-                    <div id="result-container" class="hidden text-center">
-                        <div class="text-6xl mb-4" id="result-emoji"></div>
-                        <h3 class="text-3xl font-bold mb-4" id="result-title"></h3>
-                        <p class="text-lg text-gray-600 mb-6" id="result-description"></p>
-                        <button onclick="restartQuiz()" class="bg-custom-green text-white px-6 py-3 rounded-full mr-4">Spróbuj Ponownie</button>
-                        <a href="#offer" class="bg-custom-gold text-white px-6 py-3 rounded-full">Zobacz Ofertę</a>
+
+                    <!-- Right Column -->
+                    <div class="space-y-8">
+                        <!-- Dlaczego ten kurs jest inny -->
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-custom-green flex items-center gap-3">
+                                <span class="text-3xl">🌍</span> Dlaczego ten kurs jest inny?
+                            </h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li>• Łączę język i dietetykę – uczysz się tego, co naprawdę użyjesz z klientami</li>
+                                <li>• Mam międzynarodowe doświadczenie – uczę z różnych miejsc na świecie, współpracuję z klientami globalnie</li>
+                                <li>• Sama uczę się języków (hiszpański, niemiecki, grecki), więc wiem, jakie metody naprawdę działają</li>
+                            </ul>
+                        </div>
+
+                        <!-- Co jest dla mnie ważne -->
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold mb-6 text-custom-green flex items-center gap-3">
+                                <span class="text-3xl">❤️</span> Co jest dla mnie ważne?
+                            </h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li>• Żebyś mówił/mówiła pewnie i naturalnie po angielsku, bez stresu</li>
+                                <li>• Żeby język był dla Ciebie narzędziem do spełniania marzeń zawodowych, a nie przeszkodą</li>
+                                <li>• Żeby nauka była lekka, praktyczna i dostosowana do Twojego stylu życia</li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Bottom Message -->
+                <div class="text-center mt-16 p-8 bg-gradient-to-r from-custom-green to-custom-dark rounded-3xl text-white">
+                    <h3 class="text-3xl font-bold mb-4">Masz wiedzę. Masz pasję.</h3>
+                    <p class="text-xl">Ja pomogę Ci wyrazić ją po angielsku – profesjonalnie i z lekkością.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Offer Section -->
-    <section id="offer" class="py-20 bg-white">
+    <section id="offer" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
                 <span class="text-custom-green">💎</span> Pakiety Indywidualne
@@ -248,7 +284,7 @@
     </section>
 
     <!-- Course Modules -->
-    <section id="course" class="py-20 bg-gray-50">
+    <section id="course" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">
                 <span class="text-custom-green">📚</span> Moduły Kursu
@@ -432,53 +468,6 @@
                     <p class="text-gray-600">
                         Oferujemy 30-dniową gwarancję zwrotu pieniędzy. Jeśli w tym czasie uznasz, że kurs nie spełnia Twoich oczekiwań, zwrócimy Ci pełną kwotę bez zbędnych pytań.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="mb-8">
-                            <span class="text-6xl">👋</span>
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6 text-gray-800">Cześć, jestem Anna!</h2>
-                        <div class="space-y-4 text-gray-600">
-                            <p>
-                                Łączę 15 lat doświadczenia w nauczaniu języka angielskiego z moją pasją do dietetyki i zdrowia holistycznego. Przez 15 lat prowadziłam własną szkołę językową w Londynie, gdzie również ukończyłam studia dietetyczne w College of Naturopathic Medicine (CNM).
-                            </p>
-                            <p>
-                                Moja międzynarodowa perspektywa, znajomość wielu języków (hiszpański, niemiecki, rosyjski, grecki) oraz doświadczenie w pracy z klientami z różnych kultur pozwalają mi doskonale rozumieć wyzwania związane z nauką języka specjalistycznego.
-                            </p>
-                            <p>
-                                Obecnie prowadzę zajęcia online z różnych zakątków świata, co dodaje moim lekcjom unikalnej perspektywy i elastyczności. Moja metoda nauczania łączy indywidualne podejście z nowoczesnymi narzędziami, takimi jak spersonalizowane nagrania i dedykowana aplikacja do nauki słownictwa.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-8 space-y-4">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-graduation-cap text-custom-green text-xl"></i>
-                                <span>Magister Filologii Angielskiej</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-certificate text-custom-green text-xl"></i>
-                                <span>Dyplom Dietetyki, College of Naturopathic Medicine London</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-award text-custom-green text-xl"></i>
-                                <span>15+ lat doświadczenia w nauczaniu języka angielskiego</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="blob-lg w-full h-full absolute"></div>
-                        <img src="about.jpg" alt="Anna Luksza - założycielka NutriEnglish" class="relative z-10 rounded-3xl shadow-2xl">
-                    </div>
                 </div>
             </div>
         </div>
