@@ -13,61 +13,56 @@ window.addEventListener('scroll', () => {
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.querySelector('nav button');
-    const mobileMenuContainer = document.querySelector('nav .container');
     
     if (!hamburgerBtn) {
         console.error('Hamburger button not found');
         return;
     }
     
-    // Create mobile menu
-    const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'md:hidden bg-black bg-opacity-95 backdrop-blur-sm mt-4 rounded-lg overflow-hidden transition-all duration-300 transform origin-top scale-y-0 opacity-0';
-    mobileMenu.innerHTML = `
-        <div class="py-4 px-6 space-y-4">
-            <a href="#home" class="block text-white hover:text-custom-gold transition-colors py-2">Start</a>
-            <a href="#about" class="block text-white hover:text-custom-gold transition-colors py-2">O mnie</a>
-            <a href="#offer" class="block text-white hover:text-custom-gold transition-colors py-2">Oferta</a>
-            <a href="#course" class="block text-white hover:text-custom-gold transition-colors py-2">Kurs</a>
-            <a href="#testimonials" class="block text-white hover:text-custom-gold transition-colors py-2">Opinie</a>
-            <a href="index.html" class="block text-custom-gold hover:text-white transition-colors py-2">English</a>
+    // Create mobile menu overlay
+    const mobileMenuOverlay = document.createElement('div');
+    mobileMenuOverlay.id = 'mobile-menu-overlay';
+    mobileMenuOverlay.className = 'fixed top-0 left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm z-40 hidden pt-20';
+    mobileMenuOverlay.innerHTML = `
+        <div class="flex flex-col items-center space-y-6 py-8 px-4">
+            <a href="#home" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Start</a>
+            <a href="#about" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">O mnie</a>
+            <a href="#offer" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Oferta</a>
+            <a href="#course" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Kurs</a>
+            <a href="#testimonials" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Opinie</a>
+            <a href="index-en.html" class="block text-custom-gold text-xl hover:text-white transition-colors py-2">English</a>
         </div>
     `;
     
-    mobileMenuContainer.appendChild(mobileMenu);
-    
-    let isMenuOpen = false;
+    // Add overlay to body
+    document.body.appendChild(mobileMenuOverlay);
     
     hamburgerBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
+        const overlay = document.getElementById('mobile-menu-overlay');
         
-        if (isMenuOpen) {
-            mobileMenu.classList.remove('scale-y-0', 'opacity-0');
-            mobileMenu.classList.add('scale-y-100', 'opacity-100');
+        if (overlay.classList.contains('hidden')) {
+            // Open menu
+            overlay.classList.remove('hidden');
             hamburgerBtn.innerHTML = '<i class="fas fa-times"></i>';
         } else {
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+            // Close menu
+            overlay.classList.add('hidden');
             hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
     
     // Close menu when clicking on a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    mobileMenuOverlay.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+            mobileMenuOverlay.classList.add('hidden');
             hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (isMenuOpen && !mobileMenuContainer.contains(e.target)) {
-            isMenuOpen = false;
-            mobileMenu.classList.add('scale-y-0', 'opacity-0');
-            mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+    // Close menu when clicking on overlay background
+    mobileMenuOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileMenuOverlay) {
+            mobileMenuOverlay.classList.add('hidden');
             hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
