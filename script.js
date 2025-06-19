@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="flex flex-col items-center space-y-6 py-8 px-4">
             <a href="#home" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Start</a>
             <a href="#about" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">O mnie</a>
-            <a href="#offer" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Oferta</a>
-            <a href="#course" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Kurs</a>
+            <a href="#offer" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Kurs</a>
+            <a href="#course" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Moduły</a>
             <a href="#testimonials" class="block text-white text-xl hover:text-custom-gold transition-colors py-2">Opinie</a>
             <a href="index-en.html" class="block text-custom-gold text-xl hover:text-white transition-colors py-2">English</a>
         </div>
