@@ -95,20 +95,122 @@
         </div>
     </section>
 
-    <!-- About Section - New Position -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-5xl font-bold mb-8 text-gray-800">
-                        <span class="text-6xl">🧑‍🏫</span> O mnie
-                    </h2>
-                    <p class="text-2xl text-gray-600 mb-12">
-                        Cześć! Nazywam się Ania i pomagam dietetykom, którzy chcą działać globalnie <br>– ale bez stresu związanego z językiem.
-                    </p>
-                </div>
+    <!-- About Section - Creative Layout -->
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-custom-green rounded-full animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-24 h-24 bg-custom-gold rounded-full animate-bounce-slow"></div>
+            <div class="absolute top-1/2 right-1/4 w-16 h-16 bg-custom-light rounded-full animate-pulse-slow"></div>
+            <div class="absolute top-1/4 left-1/3 w-20 h-20 bg-custom-dark rounded-full animate-float" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <!-- Curved divider at top -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-gray-50"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 pt-16">
+            <!-- Creative asymmetric layout -->
+            <div class="grid lg:grid-cols-2 gap-16 items-start mb-20">
+                <!-- Left side - Image with creative positioning -->
+                <div class="relative">
+                    <div class="relative group max-w-md lg:max-w-lg mx-auto lg:mx-0">
+                        <!-- Main image with creative treatment -->
+                        <div class="relative overflow-hidden rounded-3xl transform group-hover:scale-105 transition-all duration-700">
+                            <img src="ania_pic.jpeg" alt="Ania - Nauczycielka Angielskiego i Specjalistka Dietetyki" 
+                                 class="w-full h-96 lg:h-[450px] object-cover  transform group-hover:scale-110 transition-all duration-700">
+                        </div>
+                        
+                        <!-- Floating accent elements -->
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-custom-gold rounded-full flex items-center justify-center text-white text-2xl animate-bounce-slow">
+                            ✨
+                        </div>
+                        <div class="absolute -bottom-4 right-8 w-12 h-12 bg-custom-green rounded-full flex items-center justify-center text-white text-lg animate-pulse-slow">
+                            🌟
+                        </div>
 
-                <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Floating quote bubble -->
+                        <div class="absolute lg:-right-16 top-12 hidden lg:block">
+                            <div class="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 max-w-xs transform rotate-6 hover:rotate-0 transition-all duration-500">
+                                <p class="text-sm text-gray-600 italic mb-2">"15 lat w Londynie"</p>
+                                <p class="text-xs text-custom-green font-semibold">Własna szkoła językowa</p>
+                                <!-- Speech bubble tail -->
+                                <div class="absolute bottom-0 left-8 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white transform translate-y-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right side - Content area with creative typography -->
+                <div class="space-y-8">
+                    <!-- Main heading with creative treatment -->
+                    <div class="relative">
+                        <h2 class="text-5xl lg:text-7xl font-bold leading-tight">
+                            <span class="block text-gray-300 text-4xl lg:text-5xl font-light mb-2">Cześć,</span>
+                            <span class="block bg-gradient-to-r from-custom-green via-custom-dark to-custom-light bg-clip-text text-transparent bg-400% animate-gradient">
+                                jestem Ania!
+                            </span>
+                        </h2>
+                        
+                        <!-- Creative underline animation -->
+                        <div class="relative mt-4">
+                            <div class="w-32 h-2 bg-gradient-to-r from-custom-gold to-transparent rounded-full animate-pulse-slow"></div>
+                            <div class="w-20 h-1 bg-custom-green rounded-full mt-1 animate-bounce-slow"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main description with enhanced styling -->
+                    <div class="space-y-6">
+                        <p class="text-2xl lg:text-3xl text-gray-700 leading-relaxed">
+                            Pomagam <span class="relative inline-block">
+                                <span class="font-bold text-custom-green">dietetykom</span>
+                                <span class="absolute bottom-0 left-0 w-full h-2 bg-custom-green/20 -z-10"></span>
+                            </span>, którzy chcą działać 
+                            <span class="relative inline-block">
+                                <span class="font-bold text-custom-dark">globalnie</span>
+                                <span class="absolute bottom-0 left-0 w-full h-2 bg-custom-dark/20 -z-10"></span>
+                            </span> – ale bez stresu związanego z językiem.
+                        </p>
+                        
+                        <!-- Key points with creative icons -->
+                        <div class="grid sm:grid-cols-2 gap-4 mt-8">
+                            <div class="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div class="w-12 h-12 bg-gradient-to-br from-custom-green to-custom-dark rounded-full flex items-center justify-center text-white font-bold">
+                                    15
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Lat doświadczenia</p>
+                                    <p class="text-sm text-gray-600">w nauczaniu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm hover:shadow-lg transition-all duration-300">
+                                <div class="w-12 h-12 bg-gradient-to-br from-custom-gold to-custom-green rounded-full flex items-center justify-center text-white text-xl">
+                                    🎓
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Studia dietetyczne</p>
+                                    <p class="text-sm text-gray-600">Londyn, UK</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section transition -->
+            <div class="text-center mt-20 mb-12">
+                <div class="inline-flex items-center gap-4">
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent to-custom-green"></div>
+                    <h3 class="text-3xl font-bold text-gray-800">Poznajmy się bliżej</h3>
+                    <div class="w-16 h-0.5 bg-gradient-to-l from-transparent to-custom-green"></div>
+                </div>
+            </div>
+
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                     <!-- Left Column -->
                     <div class="space-y-8">
                         <!-- Kim jestem -->
