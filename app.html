@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English for Polish Nutritionists</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles-app.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Top Navigation Tabs -->
+    <div class="bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center">
+                <button id="vocab-tab" class="px-6 py-4 font-medium bg-green-600 text-white">
+                    Vocabulary
+                </button>
+                <button id="phrases-tab" class="px-6 py-4 font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    Phrases
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Content Container -->
+    <div id="app-content">
+        <!-- Content will be dynamically rendered here based on active tab -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 text-center mt-auto">
+        <p>English for Polish Nutritionists and Dieticians</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

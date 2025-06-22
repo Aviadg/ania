@@ -1,0 +1,169 @@
+/* Custom styles for the nutrition app */
+
+/* Hide scrollbar utility */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure body uses full viewport height */
+html, body {
+    height: 100%;
+}
+
+/* Additional footer positioning - this ensures footer stays at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Make main content area flex-grow to push footer down */
+#vocabulary-section,
+#phrases-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure content areas grow to fill space */
+.flex-grow {
+    flex-grow: 1;
+}
+
+/* Smooth transitions for all interactive elements */
+button {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced button hover effects */
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Active button states */
+button:active {
+    transform: translateY(0);
+}
+
+/* Card hover effects */
+.bg-white {
+    transition: box-shadow 0.3s ease;
+}
+
+.bg-white:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar animation */
+.bg-green-600, .bg-blue-600 {
+    transition: width 0.5s ease-in-out;
+}
+
+/* Navigation button styles */
+#lesson-nav button,
+#category-nav button {
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+#lesson-nav button:hover,
+#category-nav button:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading animation for buttons */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Fade in animation for content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Enhanced card styles */
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Focus styles for accessibility */
+button:focus,
+button:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Enhanced navigation scrollbar */
+#lesson-nav,
+#category-nav {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+#lesson-nav::-webkit-scrollbar,
+#category-nav::-webkit-scrollbar {
+    height: 4px;
+}
+
+#lesson-nav::-webkit-scrollbar-track,
+#category-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#lesson-nav::-webkit-scrollbar-thumb,
+#category-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+/* Sticky footer styles */
+footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* Ensure main content doesn't overflow */
+main, .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
